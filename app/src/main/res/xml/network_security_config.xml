@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Allows cleartext (non-TLS) connections to proxy servers.
+    Raw java.net.Socket connections are not subject to this config,
+    but including it keeps all libraries consistent.
+    Android 9+ (API 28) blocks cleartext by default.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
