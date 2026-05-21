@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ProxTunnel" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/surface_variant</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.ProxTunnel</item>
+    </style>
+
+    <!-- Full-screen variant used for the splash (no status bar either) -->
+    <style name="Theme.ProxTunnel.Splash" parent="Theme.ProxTunnel">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ThemeOverlay.ProxTunnel" parent="">
+        <item name="colorControlActivated">@color/accent</item>
+        <item name="colorControlHighlight">#337C6FD4</item>
+    </style>
+</resources>
