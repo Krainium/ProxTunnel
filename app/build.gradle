@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.krainium.proxtunnel'
+    compileSdk 34
+
+    signingConfigs {
+        release {
+            storeFile     file(System.getProperty("user.home") + "/.android/proxtunnel.jks")
+            storePassword "proxtunnel123"
+            keyAlias      "proxtunnel"
+            keyPassword   "proxtunnel123"
+            // Enable all three signature schemes:
+            // v1 = JAR signing (compatibility)
+            // v2 = APK Signature Scheme v2 (Android 7.0+)
+            // v3 = APK Signature Scheme v3 (Android 9.0+, supports key rotation)
+            enableV1Signing true
+            enableV2Signing true
+            enableV3Signing true
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.krainium.proxtunnel"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-service:2.7.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    // SSH client for SSH-over-WebSocket tunnel mode
+    implementation 'com.jcraft:jsch:0.1.55'
+}
