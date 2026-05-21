@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <!-- Radial glow halo behind title — animated via code -->
+    <View
+        android:id="@+id/v_glow"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:background="@drawable/splash_glow"
+        android:alpha="0"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Centre cluster -->
+    <LinearLayout
+        android:id="@+id/ll_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ProxTunnel"
+            android:textColor="@color/text_primary"
+            android:textSize="48sp"
+            android:textStyle="bold|italic"
+            android:letterSpacing="0.03"
+            android:alpha="0"
+            android:scaleX="0.3"
+            android:scaleY="0.3" />
+
+        <View
+            android:id="@+id/v_title_line"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="@color/accent"
+            android:alpha="0" />
+
+        <TextView
+            android:id="@+id/tv_splash_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="proxy the net"
+            android:textColor="@color/accent"
+            android:textSize="15sp"
+            android:letterSpacing="0.18"
+            android:layout_marginTop="10dp"
+            android:alpha="0"
+            android:translationY="24dp" />
+
+    </LinearLayout>
+
+    <!-- Bottom powered-by -->
+    <TextView
+        android:id="@+id/tv_powered_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="powered by Krainium"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:letterSpacing="0.08"
+        android:layout_marginBottom="36dp"
+        android:alpha="0"
+        android:translationY="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
